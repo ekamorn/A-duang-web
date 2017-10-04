@@ -1,0 +1,1137 @@
+html {
+	font-family: 'db_airystd_med';
+	overflow-x: hidden;
+}
+
+body {
+	background: url(../image/v02/bg-mini.png);
+	background-repeat: repeat;
+	background-size: 60%;
+	background-color: #fafafa;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'db_airystd_bd';
+	margin: 0 0 35px;
+	letter-spacing: 1px;
+}
+
+#all-wrap {
+	min-height: 100%;
+}
+
+/* Preload css */
+#loader-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+}
+
+#loader {
+	display: block;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	width: 150px;
+	height: 150px;
+	margin: -75px 0 0 -75px;
+	border-radius: 50%;
+	border: 3px solid transparent;
+	border-top-color: #3498db;
+
+	-webkit-animation: spin 2s linear infinite;
+	animation: spin 2s linear infinite;
+
+	z-index: 1001;
+}
+
+#loader:before {
+	content: "";
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	right: 5px;
+	bottom: 5px;
+	border-radius: 50%;
+	border: 3px solid transparent;
+	border-top-color: #e74c3c;
+
+	-webkit-animation: spin 3s linear infinite;
+	animation: spin 3s linear infinite;
+}
+
+#loader:after {
+	content: "";
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	right: 15px;
+	bottom: 15px;
+	border-radius: 50%;
+	border: 3px solid transparent;
+	border-top-color: #f9c922;
+
+	-webkit-animation: spin 1.5s linear infinite;
+	animation: spin 1.5s linear infinite;
+}
+
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@-moz-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+		-moz-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+		-moz-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+#loader-wrapper .loader-section {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../image/v02/bg-1.png);
+	z-index: 1000;
+	-webkit-transform: translateX(0);
+	-moz-transform: translateX(0);
+	-ms-transform: translateX(0);
+	transform: translateX(0);
+}
+
+.loaded #loader-wrapper .loader-section {
+	opacity: 0;
+
+	-webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+	-moz-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+	transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.loaded #loader {
+	opacity: 0;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+}
+
+.loaded #loader-wrapper {
+	visibility: hidden;
+
+	opacity: 0;
+
+	-webkit-transition: all 0.3s 1s ease-out;
+	-moz-transition: all 0.3s 1s ease-out;
+	transition: all 0.3s 1s ease-out;
+}
+
+/* Javascript Turned Off */
+.no-js #loader-wrapper {
+	display: none;
+}
+
+.parallax-header {
+	overflow: hidden;
+}
+
+.wrapper {
+	min-height: 950px;
+	padding: 0;
+	position: relative;
+	background: url(../image/v02/bg-2.png) no-repeat;
+	background-size: cover;
+	display: grid;
+}
+
+.cover-backpic {
+	/*position: absolute;*/
+	/*top: 50%;*/
+	/*left: 50%;*/
+	margin: auto;
+	z-index: 1;
+
+	/*-webkit-transform: translate(-50%, -50%);*/
+	/*-moz-transform: translate(-50%, -50%);*/
+	/*transform: translate(-50%, -50%);*/
+}
+
+.head-label--collection {
+	position: relative;
+	background-size: cover;
+	padding: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+
+	-webkit-transform: skew(0deg, -3deg);
+	-moz-transform: skew(0deg, -3deg);
+	-ms-transform: skew(0deg, -3deg);
+	transform: skew(0deg, -3deg);
+
+	z-index: 2;
+}
+
+.label {
+	font-family: 'db_airystd_bd';
+	color: #fff;
+	margin-bottom: 0;
+	line-height: 1em;
+}
+
+.head-label {
+	font-size: 60px;
+	line-height: 1.2em;
+	background-color: #ef7827;
+	padding: 10px 40px;
+	display: inline-block;
+}
+
+.body-label--collection {
+	position: relative;
+	/*max-width: 60%;*/
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 30px 110px;
+	margin-top: -30px;
+	background-size: cover;
+
+	-webkit-transform: skew(0deg, -3deg);
+	-moz-transform: skew(0deg, -3deg);
+	-ms-transform: skew(0deg, -3deg);
+	transform: skew(0deg, -3deg);
+
+	z-index: 1;
+}
+
+.body-label--collection:before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #393939;
+	top: 0px;
+	left: 0px;
+
+	z-index: -1;
+}
+
+.body-label--collection:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	top: 20px;
+	left: 20px;
+
+	z-index: -2;
+}
+
+.big-body-label {
+	font-size: 140px;
+}
+
+.small-body-label {
+	font-size: 55px;
+	line-height: .5em;
+}
+
+/* Parallax */
+@import "compass/css3";
+
+@mixin dimension($diameter) {
+  margin: -($diameter / 2) 0 0 0-($diameter / 2);
+  height: $diameter;
+  width: $diameter;
+}
+
+.mascot {
+	background-size: cover;
+	/*left: 30%;*/
+	position: absolute;
+	/*top: 30%;*/
+	width: 200px;
+	/*height: 100px;*/
+	box-shadow: (0	)
+}
+
+#mascot-1 {
+	@include dimension(150px);
+	/*background: url(../image/v02/d-1.png) no-repeat;*/
+	z-index: 20;
+	bottom: -4%;
+	left: 85%;
+}
+
+#mascot-2 {
+	@include dimension(200px);
+	/*background: url(../image/v02/d-2.png) no-repeat;*/
+	z-index: 10;
+	bottom: -4%;
+	left: 70%;
+}
+
+#mascot-3 {
+	@include dimension(200px);
+	z-index: 25;
+	bottom: -3%;
+	left: 43%;
+}
+
+#mascot-4 {
+	@include dimension(200px);
+	z-index: 20;
+	bottom: -6%;
+	left: 20%;
+}
+
+#mascot-5 {
+	@include dimension(200px);
+	z-index: 15;
+	bottom: -3%;
+	left: 0%;
+}
+
+#mascot-6 {
+	@include dimension(200px);
+	z-index: 15;
+	top: 20%;
+	left: -1.5%;
+}
+
+#mascot-7 {
+	@include dimension(200px);
+	z-index: 0;
+	top: 25%;
+	left: 28%;
+}
+
+#mascot-8 {
+	@include dimension(200px);
+	z-index: 0;
+	top: 21%;
+	left: 59%;
+}
+
+.img-mascot {
+	position: relative;
+}
+
+.mascot-day1 .img-mascot {
+	width: 280px;
+}
+
+.mascot-day2 .img-mascot {
+	width: 240px;
+}
+
+.mascot-day3 .img-mascot {
+	width: 300px;
+}
+
+.mascot-day4 .img-mascot {
+	width: 270px;
+}
+
+.mascot-day5 .img-mascot {
+	width: 250px;
+}
+
+.mascot-day6 .img-mascot {
+	width: 220px;
+}
+
+.mascot-day7 .img-mascot {
+	width: 205px;
+}
+
+.mascot-day8 .img-mascot {
+	width: 200px;
+}
+
+
+
+
+.weekly-horo-collection,
+.daily-horo-tarot-collection {
+	padding-top: 100px;
+	padding-bottom: 50px;
+}
+
+.weekly-horo-collection {
+	border-bottom: 2px solid #FD8B46;
+}
+
+.daily-horo-tarot-collection {
+	/*background-color: #FD8B46;*/
+	background:#FD8B46 url(../image/v02/bg-mini-2.png);
+	background-repeat: repeat;
+	background-size: 60%;
+	position: relative;
+}
+
+.weekly-head-collection {
+	position: relative;
+	background-color: #2b3143;
+	max-width: 50%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 15px;
+	margin-bottom: 170px;
+
+	-webkit-transform: skew(0deg, -3deg);
+	-moz-transform: skew(0deg, -3deg);
+	transform: skew(0deg, -3deg);
+}
+
+.daily-head-collection {
+	position: relative;
+	background-color: #2B3143;
+	max-width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 15px;
+	margin-bottom: 170px;
+
+	-webkit-transform: skewY(-3deg);
+	-moz-transform: skewY(-3deg);
+	transform: skewY(-3deg);
+}
+
+.article-head-collection {
+	position: relative;
+	background-color: #2b3143;
+	max-width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 15px;
+	margin-bottom: 170px;
+
+	-webkit-transform: skewY(-3deg);
+	-moz-transform: skewY(-3deg);
+	transform: skewY(-3deg);
+}
+
+.quiz-head-collection {
+	position: relative;
+	background-color: #2b3143;
+	max-width: 60%;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	padding: 15px;
+	margin-bottom: 170px;
+
+	-webkit-transform: skewY(-3deg);
+	-moz-transform: skewY(-3deg);
+	transform: skewY(-3deg);
+}
+
+.weekly-head-collection:before {
+	content: "";
+	position: absolute;
+	width: 90%;
+	height: 110%;
+	top: -5%;
+	left: 5%;
+	background-color: #D5526A;
+
+	-webkit-transform: skewY(-4deg);
+	-moz-transform: skewY(-4deg);
+	-ms-transform: skewY(-4deg);
+	transform: skewY(-4deg);
+
+	z-index: -2;
+}
+
+.daily-head-collection:before {
+	content: "";
+	position: absolute;
+	width: 90%;
+	height: 110%;
+	top: -5%;
+	left: 5%;
+	background-color: #ED523A;
+
+	-webkit-transform: skewY(-4deg);
+	-moz-transform: skewY(-4deg);
+	-ms-transform: skewY(-4deg);
+	transform: skewY(-4deg);
+
+	z-index: -2;
+}
+
+.article-head-collection:before {
+	content: "";
+	position: absolute;
+	width: 90%;
+	height: 110%;
+	top: -5%;
+	left: 5%;
+	background-color: #97ABFF;
+
+	-webkit-transform: skewY(-4deg);
+	-moz-transform: skewY(-4deg);
+	-ms-transform: skewY(-4deg);
+	transform: skewY(-4deg);
+
+	z-index: -2;
+}
+
+.quiz-head-collection:before {
+	content: "";
+	position: absolute;
+	width: 90%;
+	height: 110%;
+	top: -5%;
+	left: 5%;
+	background-color: #FEB94D;
+
+	-webkit-transform: skewY(-4deg);
+	-moz-transform: skewY(-4deg);
+	-ms-transform: skewY(-4deg);
+	transform: skewY(-4deg);
+
+	z-index: -2;
+}
+
+.weekly-head-collection:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: #2B3143;
+
+	z-index: -1;
+}
+
+.daily-head-collection:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: #2B3143;
+
+	z-index: -1
+}
+
+.article-head-collection:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: #2B3143;
+
+	z-index: -1;
+}
+
+.quiz-head-collection:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: #2B3143;
+
+	z-index: -1;
+}
+
+.weekly-big-head {
+	font-family: 'db_airystd_bd';
+	font-size: 60px;
+	text-align: center;
+	color: #fff;
+	text-shadow: 7px 5px #000;
+	margin-bottom: 0;
+	line-height: 1em;
+}
+
+.daily-big-head {
+	font-family: 'db_airystd_bd';
+	font-size: 60px;
+	text-align: center;
+	color: #fff;
+	text-shadow: 7px 5px #000;
+	margin-bottom: 0;
+	line-height: 1em;
+}
+
+.article-big-head,
+.quiz-big-head {
+	font-family: 'db_airystd_bd';
+	font-size: 60px;
+	text-align: center;
+	color: #fff;
+	text-shadow: 7px 5px #000;
+	margin-bottom: 0;
+	line-height: 1em;
+}
+
+.weekly-big-head span,
+.daily-big-head span,
+.article-big-head span,
+.quiz-big-head span {
+	color: #FE7827;
+}
+
+.weekly-small-head,
+.daily-small-head,
+.article-small-head,
+.quiz-small-head {
+	font-family: 'db_airystd_med';
+	font-size: 55px;
+	text-align:right;
+	color: #ED523A;
+	margin-top: 0;
+	margin-bottom: 0;
+	line-height: 0.8em;
+	text-shadow: 7px 5px #000;
+	padding-right: 100px;
+}
+
+.img-pop {
+	width: 20px;
+	position: absolute;
+}
+
+.pop-1 {
+	top: 10%;
+	left: 12%;
+}
+
+.pop-2 {
+	top: 55%;
+	left: 18%
+}
+
+.pop-3 {
+	top: 70%;
+	left: 30%;
+}
+
+.pop-4 {
+	top: 65%;
+	right: 8%;
+}
+
+.pop-5 {
+	top: 35%;
+	right: 4%;
+}
+
+.pop-6 {
+	top: 20%;
+	right: 20%;
+}
+
+.pop-7 {
+	width: 50px;
+	top: 65%;
+	left: 10%;
+
+	z-index: 10;
+}
+
+.pop-8 {
+	width: 50px;
+	top: 20%;
+	left: 12%;
+
+	z-index: 10;
+}
+
+.pop-9 {
+	width: 33px;
+	top: 30%;
+	left: 55%;
+
+	z-index: 10;
+}
+
+.pop-10 {
+	width: 22px;
+	bottom: 7%;
+	left: 45%;
+
+	z-index: 10;
+}
+
+.pop-11 {
+	width: 60px;
+	left: 65%;
+	top: 50%;
+
+	z-index: 10;
+}
+
+.pop-12 {
+	width: 35px;
+	bottom: 13%;
+	left: 70%;
+
+	z-index: 10;
+}
+
+.pop-13 {
+	width: 40px;
+	right: 1.5%;
+	top: 25%;
+
+	z-index: 10;
+}
+
+.pop-14 {
+	width: 45px;
+	top: 5%;
+	left: 20%;
+
+	z-index: 10;
+}
+
+.pop-15 {
+	width: 35px;
+	top: 6%;
+	right: 26%;
+
+	z-index: 10;
+}
+
+.pop-16 {
+	width: 85px;
+	right: 20%;
+	top: 49%;
+
+	z-index: 10;
+}
+
+.pop-17 {
+	width: 45px;
+	bottom: 3%;
+	left: 21%;
+
+	z-index: 10;
+}
+
+.pop-18 {
+	width: 55px;
+	bottom: 1%;
+	right: 25%;
+
+	-webkit-transform: rotateZ(30deg);
+	-moz-transform: rotateZ(30deg);
+	-ms-transform: rotateZ(30deg);
+	transform: rotateZ(30deg);
+
+	z-index: 10;
+}
+
+.pop-19 {
+	width: 55px;
+	left: -1%;
+	top: 33%;
+
+	z-index: 10;
+}
+
+.pop-20 {
+	width: 60px;
+	right: 1%;
+	top: 35%;
+
+	-webkit-transform: rotateZ(100deg);
+	-moz-transform: rotateZ(100deg);
+	-ms-transform: rotateZ(100deg);
+	transform: rotateZ(100deg);
+
+	z-index: 10;
+}
+
+.pop-21 {
+	width: 90px;
+	bottom: 35%;
+	left: -2%;
+
+	-webkit-transform: rotateZ(100deg);
+	-moz-transform: rotateZ(100deg);
+	-ms-transform: rotateZ(100deg);
+	transform: rotateZ(100deg);
+	z-index: 10;
+}
+
+.pop-22 {
+	width: 45px;
+	bottom: 2%;
+	left: 25%;
+
+	z-index: 10;
+}
+
+.pop-23 {
+	width: 45px;
+	right: 2%;
+	bottom: 20%;
+
+	z-index: 10;
+}
+
+.zodiac-link {
+	display: block;
+	margin-bottom: 40px;
+
+	-webkit-transition: all 75ms;
+	-moz-transition: all 75ms;
+	transition: all 75ms;
+
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	transform: translateZ(0);
+}
+
+.zodiac-link:hover,
+.zodiac-link:active {
+	transform: translateY(-10px);
+}
+
+@keyframes zodiacHover {
+	0% {
+		-webkit-transform: translateY(0px);
+		-moz-transform: translateY(0px);
+		transform: translateY(0px);
+	}
+
+	100% {
+		-webkit-transform: translateY(0px);
+		-moz-transform: translateY(0px);
+		transform: translateY(-30px);
+	}
+}
+
+.img-zodiac-link {
+	width: 85%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* tarot card */
+.tarot-deck--collection{
+	margin-left: 11%;
+	text-align: center;
+}
+
+.each-tarot-card-collection {
+	display: inline-block;
+	margin-left: -11%;
+	margin-top: -20%;
+	/*width: 20px;*/
+	cursor: pointer;
+	transition: all 75ms; 
+
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	transform: translateZ(0);
+}
+
+.each-tarot-card-collection:hover {
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	transform: translateY(-10px);
+}
+
+.each-tarot-card-collection:first-child {
+	/*margin-left: 0;*/
+}
+
+.each-tarot-card-collection .img-tarot--card{
+	max-width: 75px;
+	/*position: absolute;*/
+}
+
+
+.tarot-deck-button--collection {
+	text-align: center;
+	margin-top: 55px;
+}
+
+.tarot-card-submit-btn {
+	background-color: #EC5139;
+	border: none;
+	font-family: 'db_airystd_bd';
+	color: #fff;
+	font-size: 35px;
+	padding: 10px 50px;
+	cursor: pointer;
+
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	transform: translateZ(0);
+}
+
+.tarot-card-submit-btn:hover {
+	background-color: #fff;
+	color: #EC5139;
+
+	-webkit-transform: translateY(-10px);
+	-moz-transform: translateY(-10px);
+	transform: translateY(-10px);
+}
+
+@keyframes fadeDraw {
+	0%{
+		opacity: 0;
+
+		-webkit-transform: translateY(100px);
+		-moz-transform: translateY(100px);
+		transform: translateY(100px);
+	}
+
+	100%{
+		opacity: 1;
+
+		-webkit-transform: translateY(0px);
+		-moz-transform: translateY(0px);
+		transform: translateY(0px);
+	}
+}
+
+.read-draw-card--collection {
+	font-family: 'db_airystd_med';
+	width: 90%;
+	margin-left: auto !important;
+	margin-right: auto !important;
+
+	-webkit-animation: fadeDraw .85s ease-in-out;
+	-moz-animation: fadeDraw .85s ease-in-out;
+	animation: fadeDraw .85s ease-in-out;
+}
+
+.head-draw-card--collection {
+	background-color: #393939;
+	position: relative;
+	padding: 20px 30px;
+
+	-webkit-transform: skewY(-2deg);
+	-moz-transform: skewY(-2deg);
+	transform: skewY(-2deg);
+
+	z-index: 1; 
+}
+
+.head-draw-card--collection:before {
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: #393939;
+
+	z-index: -1;
+}
+
+.head-draw-card--collection:after {
+	content: "";
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	width: 100%;
+	height: 100%;
+	background-color: #ED523A;
+
+	z-index: -2;
+}
+
+.read-tarot-card {
+	position: absolute;
+	width: 100px;
+	height: 150px;
+	top: -50%;
+	left: 2%;
+
+	-webkit-transform: skewY(+2deg) rotateZ(-10deg);
+	-moz-transform: skewY(+2deg) rotateZ(-10deg);
+	transform: skewY(+2deg) rotateZ(-10deg);
+
+	z-index: 1;
+	/*animation: fadeDraw .55s ease-in-out;*/
+}
+
+.read-tarot-card:before {
+	content: "";
+	position: absolute;
+	background: url(../image/v02/a-duang-card.png) no-repeat;
+	background-color: #fff;
+	border: 5px solid #fff;
+	border-radius: 5px;
+	width: 100%;
+	height: 100%;
+	top: 2%;
+	left: 3%;
+
+	-webkit-transform: rotateZ(-5deg);
+	-moz-transform: rotateZ(-5deg);
+	transform: rotateZ(-5deg);
+
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	z-index: 1;
+}
+
+.read-tarot-card:after {
+	content: "";
+	position: absolute;
+	background: url(../image/v02/a-duang-card.png) no-repeat;
+	width: 100%;
+	height: 100%;
+	top: 2%;
+	left: 24%;
+	
+	-webkit-transform: rotateZ(+10deg);
+	-moz-transform: rotateZ(+10deg);
+	transform: rotateZ(+10deg);
+
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+	z-index: -1;
+}
+
+.head-meaning-tarot-card {
+	font-family: 'db_airystd_bd';
+	color: #fff;
+	font-size: 40px;
+	text-align: right;
+	margin-bottom: 0;
+	line-height: 1.5em;
+
+	/*animation: fadeDraw .65s ease-in-out;*/
+}
+
+.body-draw-card--collection {
+	background-color: #f5f5f5;
+	padding: 20px;
+	padding-top: 70px;
+	margin-top: -30px;
+	width: 90%;
+	min-height: 400px;
+	margin-right: auto !important;
+	margin-left: auto !important; 
+}
+
+.body-meaning-tarot-card {
+	color: #424242;
+	font-size: 25px;
+	text-align: left;
+}
+
+.second-content--collection {
+	position: relative;
+}
+
+/* third & fourth content */
+.third-fourth-content-section {
+	display: block;
+	position: relative;
+}
+
+.my-container {
+	max-width: 90%;
+}
+
+.third-content-section,
+.fourth-content-section {
+	padding-top: 150px;
+	padding-bottom: 80px;
+	border-bottom: 2px solid rgba(43,49,67,.25);
+	/*position: relative;*/
+}
+
+.each-article-body-collection,
+.each-quiz-body-collection {
+	display: block;
+	color: #2B3143;
+	margin-bottom: 40px;
+}
+
+.each-article-body-collection:hover,
+.each-article-body-collection:active,
+.each-quiz-body-collection:hover,
+.each-quiz-body-collection:active {
+	text-decoration: none;
+	color: #2B3143;
+}
+
+.article-pic,
+.quiz-pic {
+	width: 100%;
+}
+
+.each-name-article,
+.each-name-quiz {
+	font-family: 'db_airystd_med';
+	font-size: 30px;
+	margin-bottom: 0;
+	line-height: 1em;
+	margin-top: 10px;
+}
+
+.creator-article-name,
+.creator-quiz-name {
+	font-family: 'db_airystd';
+	font-size: 25px;
+
+}

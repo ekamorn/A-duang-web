@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<iframe width="480" height="360" src="https://youtu.be/1TXK-2kOHuQ"></iframe>
+
+<P id="textTest"></P>
+
+<!-- jQuery core js -->
+<script src="js/jquery-3.2.1.min.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	// horoscope daily
+	$.get('http://aduang-svc-dev.azurewebsites.net/horoscopes/daily', function(data, status) {
+
+		var titleContent = "";
+
+		var eachDaily = "",
+			testDaily = "";
+
+		var x = "";
+		var y = "";
+		var z = "";
+
+		$.each(data, function(i, item){
+			titleContent = item.title;
+
+			eachDaily = item.contents;
+
+			testDaily = eachDaily.length;
+
+
+			for (var i = 0; i<testDaily; i++) {
+				x = item.contents[i].contents.length;
+
+			for (var j = 0; j<x; j++) {
+				y = item.contents[i].contents[j].title;
+				z =	item.contents[i].contents[j].text;
+
+				console.log(y + z);
+			}
+
+			// console.log("Day of Birth is : " + x);
+
+			}
+		});
+
+		console.log(eachDaily);
+
+		console.log(titleContent);
+		console.log("Each Daily Contents : " + eachDaily);
+		
+
+		$("#textTest").html("Title is : " + titleContent + "<br>" + "Each Daily Contents : " + eachDaily);
+	});
+
+	// horoscope today
+	// $.get("http://aduang-svc-dev.azurewebsites.net/horoscopes/daily/today", function(data, status){
+
+	// 	var contentPacks2 = data.title,
+	// 		contentsToday = data.contents,
+	// 		dailyToday = "";
+
+	// 	var horoToday = $.each(contentsToday, function(i, item){
+	// 		dailyToday = dailyToday + item;
+	// 	});
+
+	// 	console.log(contentsToday);
+
+	// 	console.log("Data Pack 2 : " + contentPacks2);
+	// });
+});
+</script>
+</body>
+</html>

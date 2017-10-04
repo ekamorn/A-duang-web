@@ -1,0 +1,30 @@
+/* Parallax 2 */
+@import "compass/css3";
+
+@mixin dimension($diameter) {
+  margin: -($diameter / 2) 0 0 0-($diameter / 2);
+  height: $diameter;
+  width: $diameter;
+}
+
+.mascot {
+	background-size: cover;
+	left: 30%;
+	position: relative;
+	top: 30%;
+	width: 100%;
+	/*height: 100px;*/
+}
+
+#mascot-1 {
+	@include dimension(150px);
+	background: url(../image/v02/d-1.png) no-repeat;
+	z-index: 20;
+}
+
+#mascot-2 {
+	@include dimension(200px);
+	background: url(../image/v02/d-2.png) no-repeat;
+	z-index: 10;
+}
+/* /Parallax 2 */
